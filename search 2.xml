@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Java connection issue</title>
+    <url>/2020/02/16/Java%20connecting%20to%20Data%20base%20ussues/</url>
+    <content><![CDATA[<h2 id="Java-connecting-to-Data-base-ussues"><a href="#Java-connecting-to-Data-base-ussues" class="headerlink" title="Java connecting to Data base ussues"></a>Java connecting to Data base ussues</h2><h4 id="Problem-descriptions"><a href="#Problem-descriptions" class="headerlink" title="Problem descriptions:"></a>Problem descriptions:</h4><p>Since I had not keep doing this project for nearly a year, I met some issues when I tried to lick it up. </p>
+<h5 id="1-Not-able-to-connect-to-database"><a href="#1-Not-able-to-connect-to-database" class="headerlink" title="1. Not able to connect to database:"></a>1. Not able to connect to database:</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">java.lang.ClassNotFoundException: com.mysql.jdbc.Driver</span><br></pre></td></tr></table></figure>
+
+<p>This is because that I had deleted the  mysql connection jar file on the desketop before, so when the Intelij try to find it through the old path, it did not work out.</p>
+<h6 id="ways-to-solve"><a href="#ways-to-solve" class="headerlink" title="ways to solve :"></a>ways to solve :</h6><ol>
+<li><p>Check the conncetor version from the <em>Data Sources and Drivers</em> bar.</p>
+<p><img src="/images/image-20200216142338197.png" alt="image-20200216142338197"></p>
+</li>
+</ol>
+<p><img src="/images/image-20200216142559252.png" alt="image-20200216142559252"></p>
+<ol start="2">
+<li>Download the correspond version from the <a href="https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.47/mysql-connector-java-5.1.47.jar" target="_blank" rel="noopener">jar website</a>, note: if the version does not correspond, the connection would not work out .</li>
+</ol>
+<ol start="3">
+<li><p>Open the project Structure by using <code>command + ;</code>and upload the new download jar file</p>
+<p><img src="/images/image-20200216143229062.png" alt="image-20200216143229062"></p>
+</li>
+</ol>
+<h5 id="2-Problems-with-Mysql-connections"><a href="#2-Problems-with-Mysql-connections" class="headerlink" title="2. Problems with Mysql connections"></a>2. Problems with Mysql connections</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">MySQL 8.0 - Client does not support authentication protocol requested by server; consider upgrading MySQL client</span><br></pre></td></tr></table></figure>
+
+<p><strong>Answer from Stack overflow</strong>:</p>
+<p> <a href="https://stackoverflow.com/questions/50093144/mysql-8-0-client-does-not-support-authentication-protocol-requested-by-server" target="_blank" rel="noopener">https://stackoverflow.com/questions/50093144/mysql-8-0-client-does-not-support-authentication-protocol-requested-by-server</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;password&#39;</span><br></pre></td></tr></table></figure>
+
+<p>Where <code>root</code> as your user <code>localhost</code> as your URL and <code>password</code> as your password</p>
+<p>Then run this query to refresh privileges:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+
+<p>Try connecting using node after you do so.</p>
+<p>If that doesn’t work, try it without <code>@&#39;localhost&#39;</code> part.</p>
+<p>Execute the following query in MYSQL Workbench</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED WITH mysql_native_password BY &#39;password&#39;</span><br></pre></td></tr></table></figure>
+
+<p>Where <code>root</code> as your user <code>localhost</code> as your URL and <code>password</code> as your password</p>
+<p>Then run this query to refresh privileges:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+
+<p>Try connecting using node after you do so.</p>
+<p>If that doesn’t work, try it without <code>@&#39;localhost&#39;</code> part.</p>
+]]></content>
+      <categories>
+        <category>Study</category>
+      </categories>
+      <tags>
+        <tag>Learning</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CV</title>
+    <url>/2020/02/01/Curriculum%20vitae/</url>
+    <content><![CDATA[<h1 id="TianShu-Fu"><a href="#TianShu-Fu" class="headerlink" title="TianShu Fu"></a><center>TianShu Fu</h1><h3 id="Experience"><a href="#Experience" class="headerlink" title="Experience:"></a>Experience:</h3><hr>
+<h4 id="University-of-California-Berkeley"><a href="#University-of-California-Berkeley" class="headerlink" title="University of California Berkeley"></a>University of California Berkeley</h4><p>Major: Data Science  GPA: 3.5/4.0</p>
+<h4 id="Central-China-Normal-University"><a href="#Central-China-Normal-University" class="headerlink" title="Central China Normal University"></a>Central China Normal University</h4><p>Major: Computer Science GPA: 86.67/100.0</p>
+<h3 id="Standard-Test"><a href="#Standard-Test" class="headerlink" title="Standard Test"></a>Standard Test</h3><hr>
+<h4 id="Toffel-104"><a href="#Toffel-104" class="headerlink" title="Toffel :104"></a>Toffel :104</h4><p>​    Reading: 27,  listening: 26 , speaking:28 ,  writing:23</p>
+<h4 id="GRE-322-4-0"><a href="#GRE-322-4-0" class="headerlink" title="GRE: 322+ 4.0"></a>GRE: 322+ 4.0</h4><p>​    Verbal: 152 , Quantitative: 170 , Analytical Writing: 4.0</p>
+<h2 id="Scholarship-Awards"><a href="#Scholarship-Awards" class="headerlink" title="Scholarship Awards"></a>Scholarship Awards</h2><ul>
+<li><h4 id="Bou-Ya-Dan-Gui-scholarship-2016-2017"><a href="#Bou-Ya-Dan-Gui-scholarship-2016-2017" class="headerlink" title="Bou Ya Dan Gui scholarship 2016-2017"></a>Bou Ya Dan Gui scholarship <code>2016-2017</code></h4></li>
+<li><h4 id="Bou-Ya-Yin-Gui-scholarship-2017-2018"><a href="#Bou-Ya-Yin-Gui-scholarship-2017-2018" class="headerlink" title="Bou Ya Yin Gui scholarship 2017-2018"></a>Bou Ya Yin Gui scholarship <code>2017-2018</code></h4></li>
+<li><h4 id="Bou-Ya-Jing-Gui-scholarship-2018-2019"><a href="#Bou-Ya-Jing-Gui-scholarship-2018-2019" class="headerlink" title="Bou Ya Jing Gui scholarship 2018-2019"></a>Bou Ya Jing Gui scholarship <code>2018-2019</code></h4></li>
+</ul>
+<h2 id="Experience-1"><a href="#Experience-1" class="headerlink" title="Experience"></a>Experience</h2><ul>
+<li><strong>Intern in Tencent Financial Technology department</strong></li>
+<li><strong>Intern in Industrial and Commercial Bank of China</strong></li>
+<li><strong>The monitor of class 1606 in the department of Central China Normal University</strong></li>
+<li><strong>Worked in the Department of Public information in the department of Computer Science</strong></li>
+<li><strong>Having worked in the cross culture communication association in CCNU</strong></li>
+<li><strong>A member of Public English Speaking Team</strong> </li>
+</ul>
+<h2 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h2><ul>
+<li><h4 id="Automatic-group-control-price-monitor-system"><a href="#Automatic-group-control-price-monitor-system" class="headerlink" title="Automatic group control price monitor system"></a>Automatic group control price monitor system</h4><p>Build up a system to control 50 phones at the same time in order to monitor the price of popular financial products.</p>
+</li>
+<li><h4 id="Storing-Newick-trees-into-databases"><a href="#Storing-Newick-trees-into-databases" class="headerlink" title="Storing Newick trees into databases"></a>Storing Newick trees into databases</h4><p>Create a new algorithm to store tree format into database. Our method  takes only t 5% of the time of the traditional method when the number of tree nodes reach 1000.</p>
+</li>
+<li><h4 id="Data-analysis-of-Trump’s-Twitter"><a href="#Data-analysis-of-Trump’s-Twitter" class="headerlink" title="Data analysis of Trump’s Twitter"></a>Data analysis of Trump’s Twitter</h4><p>Acquiring Data from Twiter API, using natural language processing and data mining skills to find out interesting conclusions.</p>
+</li>
+<li><h4 id="Recognition-of-spam-email"><a href="#Recognition-of-spam-email" class="headerlink" title="Recognition of spam email"></a>Recognition of spam email</h4><p>Using feature engineering skills to deal with the raw training data, then using the model of logistic regression to build a prediction model with the accuracy of 93.</p>
+</li>
+<li><h4 id="The-encode-and-decode-of-words-by-using-MCMC"><a href="#The-encode-and-decode-of-words-by-using-MCMC" class="headerlink" title="The encode and decode of words by using MCMC"></a>The encode and decode of words by using MCMC</h4><p>Using reverse Markov Chain Monte Carlo chain to decode the substitution code.</p>
+</li>
+<li><h4 id="Knowledge-graph-of-the-development-related-to-Train"><a href="#Knowledge-graph-of-the-development-related-to-Train" class="headerlink" title="Knowledge graph of the development related to Train"></a>Knowledge graph of the development related to Train</h4><p>Collect and clean relevant data about the development of Train,  build a knowledge graph among these related inventions.</p>
+</li>
+<li><h4 id="New-York-Taxi-time-prediction"><a href="#New-York-Taxi-time-prediction" class="headerlink" title="New York Taxi time prediction"></a>New York Taxi time prediction</h4><p>Using logistic regression and random forest to build a prediction model to predict the time of each taxi drive.</p>
+</li>
+</ul>
+<h2 id="Honors"><a href="#Honors" class="headerlink" title="Honors"></a>Honors</h2><ul>
+<li><p><strong>Meritorious winner of Mathematical Contest In Modeling in 2019</strong></p>
+</li>
+<li><p><strong>Winner of the second award of FLTRP English speaking competition</strong>  </p>
+</li>
+<li><p><strong>Central China Normal University basketball match 2019  Champion</strong></p>
+</li>
+<li><p><strong>Central China Normal University basketball match final game most valuable player</strong></p>
+</li>
+</ul>
+<h2 id="Skills"><a href="#Skills" class="headerlink" title="Skills"></a>Skills</h2><ul>
+<li><p><strong>Practical use of Python, SQL, Java, R</strong></p>
+</li>
+<li><p><strong>Mobile automation and testing</strong> </p>
+</li>
+<li><p><strong>group Control and distributed system</strong></p>
+</li>
+<li><p><strong>Data cleaning, feature engineering , visualization</strong> </p>
+</li>
+<li><p><strong>Master in fundamental machine learning model such as Linear regression, logistic regression</strong></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>About me</category>
+      </categories>
+      <tags>
+        <tag>About me</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>My story in 2049</title>
+    <url>/2020/02/01/My%20Big%20story%20in%202049%20%20resilient%20from%20frustration/</url>
+    <content><![CDATA[<h2 id="My-Big-story-in-2049-resilient-from-frustration"><a href="#My-Big-story-in-2049-resilient-from-frustration" class="headerlink" title="My Big story in 2049:     resilient from frustration"></a>My Big story in 2049:     <strong>resilient from frustration</strong></h2><p>I had always been believing that frustration and jibes can be overwhelmed by continuously efforts. The last place of the running competition had always belonged to me when I was in primary school since I was so fat, and my classmates jibed that why a so fat guy would take part in the sports competition. Then I worked extremely hard to lose fat and keep training and got my first gold medal during my first year of high school. The girl I crushed on while I was in high school pointed me out that I was not good at study as she does and won’t have a good fortune if being together with me. Then I studied very hard and got the national price of math competition which she always been dreaming for. I cried in front of my head teacher in while in high school since he was mentioning a story that I never wanted to talk about, and he said that no girls would like such a weak guy like me. Then I started to become more strong both in body and mental and won a lot of favor.</p>
+<p> After getting through these, I tend to believe that no matter how big the frustration is , as long as I worked hard enough, I could always beat it. However, one thing happened two years ago had totally changed my mind. My grandma had died in an accident of emergency, I didn’t even get the chance to see her last face. I felt terribly bad and I tried to think about ways of getting over it like I used to do and I found that it’s impossible since one of the most people I love in the world had gone and there is nothing I can do to get her back. Then my parents came to find me and three of us were sitting in a coffee bar, we knew the hard-wound in each of our hearts but we smiled to each other and talked about something fun in our daily life. I felt a lot better after that. As I can’t change the fact that my grandmother had gone, I could embrace the life I had right now. Then I knew that there is always something in the world that I can’t change no matter how hard I try, but united with the best person I love could give me a lot of strength to keep moving forward. There is always something I can’t beat up with, but by uniting with each other we can become more and stronger.</p>
+<p>​There is something you can’t change no matter what, there is also something you can’t change by yourself. I had not realized there is so a big prejudice towards China until I had started my exchange semester in Berkeley. I tried to change the prejudice but I found it’s so hard. For example, I could clarify that Taiwan belongs to China to one person but during the next day someone else would ask me the same question. Most of the Chinese people in the US were trying to change that prejudice and try to prove that we are a strong and developed nation but we weren’t really united together.</p>
+<p>​2049, the year when we are reaching our 100 years, the year I’m gonna be 50, hope I could be more united with the person whom I loved while facing setbacks, hope all the Chinese people could all united together when facing a big issue while staying abroad, hope China could become a developed country through the fast developing trend!</p>
+]]></content>
+      <categories>
+        <category>About me</category>
+      </categories>
+      <tags>
+        <tag>future</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Travel in Vietnam</title>
+    <url>/2020/01/30/Travel%20in%20Vietnam/</url>
+    <content><![CDATA[<h1 id="Travel-in-Vietnam"><a href="#Travel-in-Vietnam" class="headerlink" title="Travel in Vietnam"></a>Travel in Vietnam</h1><h4 id="1-Summary"><a href="#1-Summary" class="headerlink" title="1.Summary"></a>1.Summary</h4><p>This was a great traveling Experience </p>
+<center><font=20>View from the flight
+
+</center>
+
+<p><img src="/images/V_1.jpg" alt=""></p>
+<center>
+  Bright  beach
+</center>
+
+
+
+
+<p><img src="/images/V_2.jpg" alt=""></p>
+<center>
+  Looking far from the high mountain
+</center>
+
+
+<p><img src="/images/V_3.jpg" alt=""></p>
+ <center>
+  European style of Bana Mountain
+</center>
+
+
+<p><img src="/images/V_4.jpg" alt=""></p>
+<center>
+  Fitness training
+</center>
+
+
+<p><img src="/images/V_5.jpg" alt=""></p>
+<center>
+  Great Sunshine
+</center>
+
+
+
+
+<p><img src="/images/V_6.jpg" alt=""></p>
+]]></content>
+      <categories>
+        <category>Travel</category>
+      </categories>
+      <tags>
+        <tag>Travel</tag>
+        <tag>Vietnam</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Basketball match</title>
+    <url>/2019/04/21/Basketball/</url>
+    <content><![CDATA[<iframe width=100% height=415 frameborder="0" src="https://v.qq.com/txp/iframe/player.html?vid=u087753in59" allowFullScreen="true"></iframe>
+
+]]></content>
+      <categories>
+        <category>Sport</category>
+      </categories>
+      <tags>
+        <tag>Basketball</tag>
+        <tag>Awards</tag>
+      </tags>
+  </entry>
+</search>
